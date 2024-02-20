@@ -6,6 +6,8 @@
 
 This project focuses on developing a loan prediction model using machine learning techniques, specifically Gradient Boosting and Support Vector Machines (SVM) on Google Cloud Platform (GCP). The goal was to improve the accuracy of the loan prediction model by implementing advanced data extraction and manipulation techniques.
 
+Dataset - https://collegescorecard.ed.gov/data/
+
 ## Key Features
 
 - Utilizes Gradient Boosting and SVM machine learning algorithms for loan prediction.
@@ -20,6 +22,6 @@ This project focuses on developing a loan prediction model using machine learnin
 
 ## Acknowledgments
 
-We would like to acknowledge the support and guidance of our mentors and the resources provided by Google Cloud Platform. Special thanks to the project team for their dedication and hard work in making this project a success.
+We would like to acknowledge the support and guidance of our mentors and the resources provided by Google Cloud Platform (GCP). Special thanks to the project team for their dedication and hard work in making this project a success.
 
 Happy Coding!
