@@ -1,9 +1,8 @@
 import numpy as np
 import pandas as pd
 from sklearn.externals import joblib
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.multioutput import RegressorChain 
-from sklearn.multioutput import MultiOutputRegressor 
+from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
+from sklearn.multioutput import RegressorChain, MultiOutputRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -45,14 +44,17 @@ def accuracy(model, X_test, y_test):
 models = [
     GradientBoostingRegressor(n_estimators=100, max_depth=3, random_state=0),
     GradientBoostingRegressor(n_estimators=200, max_depth=5, random_state=0),
-    GradientBoostingRegressor(n_estimators=300, max_depth=7, random_state=0)
+    GradientBoostingRegressor(n_estimators=300, max_depth=7, random_state=0),
+    RandomForestRegressor(n_estimators=100, max_depth=3, random_state=0),
+    RandomForestRegressor(n_estimators=200, max_depth=5, random_state=0),
+    RandomForestRegressor(n_estimators=300, max_depth=7, random_state=0)
 ]
 
 for idx, model in enumerate(models, start=1):
-    model_name = f"GradientBoostingRegressor_{idx}"
+    model_name = f"Model_{idx}"
     model.fit(X_train, y_train)
     joblib.dump(model, f"{model_name}.pkl")
-    print(f"Model {idx} ({model_name}): ")
+    print(f"{model_name}: ")
     accuracy(model, X_test, y_test)
 
 # SVM Regressor
